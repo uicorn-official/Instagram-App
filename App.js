@@ -2,22 +2,18 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Appbar from './app/src/components/Appbar';
+import tw from 'twrnc';
+import AppbarGlobal from './app/src/components/AppBars/AppbarGlobal';
+import Stories from './app/src/components/Stories/Stories';
+import Post from './app/src/components/Posts/Post';
+import AllPosts from './app/src/components/Posts/AllPosts';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Appbar/>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={tw`w-[100%]`}>
+      <AppbarGlobal/>
+      <Stories/>
+      <AllPosts/>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
