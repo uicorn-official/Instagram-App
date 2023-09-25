@@ -7,6 +7,7 @@ import AppbarGlobal from './app/src/components/AppBars/AppbarGlobal';
 import Stories from './app/src/components/Stories/Stories';
 import Post from './app/src/components/Posts/Post';
 import AllPosts from './app/src/components/Posts/AllPosts';
+import BottomNavbar from './app/src/components/Layout/BottomNavbar';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <AppbarGlobal/>
       <Stories/>
       <AllPosts/>
+      <BottomNavbar/>
     </View>
   );
 }

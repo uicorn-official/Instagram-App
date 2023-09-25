@@ -9,7 +9,7 @@ export default function AllPosts() {
       <FlatList
         data={posts}
         keyExtractor={(item) => item.id}
-        renderItem={({ item, index }) => <Post item={item} key={index}/>}
+        renderItem={({ item, index }) => <Post item={item} key={item.id} islastPost={index===posts.length-1?true:false}/>}
       />
     </View>
   );

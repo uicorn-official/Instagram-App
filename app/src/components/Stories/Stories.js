@@ -11,7 +11,7 @@ export default function Stories() {
       <View style={tw`flex-row h-[100px] items-center border-b-2 border-[#DDDDDD]`}>
         <MyStory style="mr-[12px]" />
         {storiesData.map((item, index) => (
-          <OthersStory style="mr-[12px]" item={item} key={index} isStoryActive={index<=5?true:false}/>
+          <OthersStory style="mr-[12px]" item={item} key={index} isStoryActive={index<=10?true:false}/>
         ))}
       </View>
     </ScrollView>

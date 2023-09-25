@@ -23,14 +23,16 @@ import bluetick from "../../icons/bluetick.png";
 import tag from "../../icons/tag.png";
 import like from "../../icons/like.png";
 import tw from "twrnc";
+import Comment from "./Comment";
 
-export default function Post({ item }) {
+export default function Post({ item,islastPost }) {
   const {
     dp,
     name,
     isVerified,
     isStoryActive,
     isSponsored,
+    isTagged,
     isReel,
     reel,
     post,
@@ -42,10 +44,9 @@ export default function Post({ item }) {
 
   const [isLiked, setLike] = useState(false);
   const [isSaved, setsaved] = useState(false);
-  const [isCommentLiked, setCommentLike] = useState(false);
 
   return (
-    <View>
+    <View style={tw`${islastPost?"mb-[50px]":""}`}>
       {/* Post Header */}
       <View
         style={tw`flex-row justify-between items-center px-[10px] py-[7px] `}
@@ -78,12 +79,12 @@ export default function Post({ item }) {
       <View>
         <Image
           source={require("../../images/friends/" + post[0])}
-          style={tw`h-[500px]`}
+          style={tw`h-[450px]`}
         />
-        <Image
+        {isTagged && <Image
           style={tw`w-[24px] h-[24px] rounded-full absolute bottom-[10px] left-[16px]`}
           source={tag}
-        />
+        />}
       </View>
 
       {/* Post Footer */}
@@ -119,7 +120,7 @@ export default function Post({ item }) {
 
       {/* Post Footer 2 */}
       <View style={tw`px-[12px] `}>
-        <View style={tw` d-flex items-center flex-row pb-[5px]`}>
+        <View style={tw`flex items-center flex-row pb-[5px]`}>
           <Image
             style={tw`w-[24px] h-[24px] rounded-full border-2 border-white z-30`}
             source={msdhoni}
@@ -159,22 +160,7 @@ export default function Post({ item }) {
             data={sampleComments}
             keyExtractor={(item) => item.id}
             renderItem={({ item, index }) => (
-              <View style={tw`flex-row justify-between mb-[3px]`}>
-                <View style={tw`flex-row`}>
-                  <Text style={tw`text-[12px] font-bold mr-[3px]`}>
-                    {item.name}
-                  </Text>
-                  <Text style={tw`text-[12px]`}>{item.comment}</Text>
-                </View>
-                <View>
-                  <TouchableOpacity onPress={()=>{setCommentLike(!isCommentLiked)}}>
-                    <Image
-                      style={tw`w-[10px] h-[10px]`}
-                      source={isCommentLiked ? liked : like}
-                    />
-                  </TouchableOpacity>
-                </View>
-              </View>
+              <Comment item={item} key={index}/>
             )}
           />
         </View>

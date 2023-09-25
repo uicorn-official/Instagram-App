@@ -1,27 +1,13 @@
 const posts = [
-    {
-        dp: "srk.jpg",
-    name: "iamsrk",
-    isVerified: true,
-    isStoryActive: true,
-    isSponsored: false,
-    isReel: false,
-    reel: "",
-    post: ["srk.jpg"],
-    caption:
-      "Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-    likesCount: "24,51,182",
-    commentCount: "1605",
-    sampleComments: [
-      { id: 1, name: "katrinakaif", comment: "Wowww😍" },
-      { id: 2, name: "vickykaushal", comment: "❤️‍🔥" },
-    ]},
-    {
-        dp: "dp.jpg",
+  {
+    id:1,
+    dp: "dp.jpg",
     name: "abhilasha_4sq",
     isVerified: true,
     isStoryActive: true,
     isSponsored: false,
+    isTagged: true,
+    tagList: [],
     isReel: false,
     reel: "",
     post: ["post1.jpg"],
@@ -32,13 +18,38 @@ const posts = [
     sampleComments: [
       { id: 1, name: "nandini.oops", comment: "😍❤️‍🔥" },
       { id: 2, name: "alokkumax", comment: "her 💘 >>>" },
-    ]},
-    {
-        dp: "katrina-kaif.jpg",
-    name: "katrinakaif",
+    ]
+  },
+  {
+    id:2,
+    dp: "srk.jpg",
+    name: "iamsrk",
     isVerified: true,
     isStoryActive: true,
     isSponsored: false,
+    isTagged: true,
+    tagList: [],
+    isReel: false,
+    reel: "",
+    post: ["srk.jpg"],
+    caption:
+      "Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+    likesCount: "24,51,182",
+    commentCount: "1605",
+    sampleComments: [
+      { id: 1, name: "katrinakaif", comment: "Wowww😍" },
+      { id: 2, name: "vickykaushal", comment: "❤️‍🔥" },
+    ]
+  },
+  {
+    id:3,
+    dp: "katrina-kaif.jpg",
+    name: "katrinakaif",
+    isVerified: true,
+    isStoryActive: true,
+    isSponsored: true,
+    isTagged: true,
+    tagList: [],
     isReel: false,
     reel: "",
     post: ["katrina-kaif.jpg"],
@@ -49,13 +60,17 @@ const posts = [
     sampleComments: [
       { id: 1, name: "nandini.oops", comment: "😍❤️‍🔥" },
       { id: 2, name: "alokkumax", comment: "her 💘 >>>" },
-    ]},
-    {
-        dp: "chris-evans.jpg",
+    ]
+  },
+  {
+    id:4,
+    dp: "chris-evans.jpg",
     name: "chrisevans",
     isVerified: true,
     isStoryActive: true,
     isSponsored: false,
+    isTagged: true,
+    tagList: [],
     isReel: false,
     reel: "",
     post: ["chris-evans.jpg"],
@@ -66,13 +81,17 @@ const posts = [
     sampleComments: [
       { id: 1, name: "nandini.oops", comment: "😍❤️‍🔥" },
       { id: 2, name: "alokkumax", comment: "her 💘 >>>" },
-    ]},
-    {
-        dp: "deepika-padukone.jpg",
+    ]
+  },
+  {
+    id:5,
+    dp: "deepika-padukone.jpg",
     name: "deepikapadukone",
     isVerified: true,
     isStoryActive: true,
-    isSponsored: false,
+    isSponsored: true,
+    isTagged: false,
+    tagList: [],
     isReel: false,
     reel: "",
     post: ["deepika-padukone.jpg"],
@@ -83,7 +102,8 @@ const posts = [
     sampleComments: [
       { id: 1, name: "nandini.oops", comment: "😍❤️‍🔥" },
       { id: 2, name: "alokkumax", comment: "her 💘 >>>" },
-    ]},
+    ]
+  },
 ]
 
 export default posts;
