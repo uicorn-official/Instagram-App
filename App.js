@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Appbar from './app/src/components/Appbar';
 import tw from 'twrnc';
 import AppbarGlobal from './app/src/components/AppBars/AppbarGlobal';
@@ -11,11 +11,11 @@ import BottomNavbar from './app/src/components/Layout/BottomNavbar';
 
 export default function App() {
   return (
-    <View style={tw`w-[100%]`}>
+    <SafeAreaView style={tw`w-[100%] h-full`}>
       <AppbarGlobal/>
       <Stories/>
       <AllPosts/>
       <BottomNavbar/>
-    </View>
+    </SafeAreaView>
   );
 }

@@ -9,7 +9,7 @@ import tw from "twrnc";
 
 export default function BottomNavbar() {
   return (
-    <View style={{position:"fixed",width:"100%",bottom:"0px"}}>
+    <View style={{position:"fixed",width:"100%",bottom:0,zIndex:50}}>
       <View style={tw`px-[15px] py-[12px] flex-row justify-between bg-white w-full`}>
         <Image style={tw`w-[24px] h-[24px]`} source={homeActive} />
         <Image style={tw`w-[24px] h-[24px]`} source={search} />

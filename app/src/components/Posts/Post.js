@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import storyring from "../../images/global/Storyring.png";
 import greycircle from "../../images/global/GreyCircle.png";
-import srk from "../../images/friends/srk.jpg";
 import msdhoni from "../../images/friends/msdhoni.jpg";
 import katrinakaif from "../../images/friends/katrina-kaif.jpg";
 import viratKohli from "../../images/friends/virat-kohli.jpg";
@@ -24,8 +23,9 @@ import tag from "../../icons/tag.png";
 import like from "../../icons/like.png";
 import tw from "twrnc";
 import Comment from "./Comment";
+import Span from "../global/Span";
 
-export default function Post({ item,islastPost }) {
+export default function Post({ item, islastPost }) {
   const {
     dp,
     name,
@@ -46,7 +46,7 @@ export default function Post({ item,islastPost }) {
   const [isSaved, setsaved] = useState(false);
 
   return (
-    <View style={tw`${islastPost?"mb-[50px]":""}`}>
+    <View style={tw`${islastPost ? "mb-[200px]" : ""}`}>
       {/* Post Header */}
       <View
         style={tw`flex-row justify-between items-center px-[10px] py-[7px] `}
@@ -59,7 +59,7 @@ export default function Post({ item,islastPost }) {
             />
             <Image
               style={tw`w-[34px] h-[34px] rounded-full absolute top-[3px] left-[3px]`}
-              source={require("../../images/friends/" + dp)}
+              source={dp}
             />
           </View>
           <View style={tw`justify-center`}>
@@ -77,14 +77,13 @@ export default function Post({ item,islastPost }) {
 
       {/* Post Picture */}
       <View>
-        <Image
-          source={require("../../images/friends/" + post[0])}
-          style={tw`h-[450px]`}
-        />
-        {isTagged && <Image
-          style={tw`w-[24px] h-[24px] rounded-full absolute bottom-[10px] left-[16px]`}
-          source={tag}
-        />}
+        <Image source={post[0]} style={tw`h-[450px] w-full`} />
+        {isTagged && (
+          <Image
+            style={tw`w-[24px] h-[24px] rounded-full absolute bottom-[10px] left-[16px]`}
+            source={tag}
+          />
+        )}
       </View>
 
       {/* Post Footer */}
@@ -126,33 +125,30 @@ export default function Post({ item,islastPost }) {
             source={msdhoni}
           />
           <Image
-            style={tw`w-[24px] h-[24px] rounded-full border-2 border-white absolute left-[16px] z-20`}
+            style={tw`w-[24px] h-[24px] rounded-full border-2 border-white absolute top-0 left-[16px] z-20`}
             source={katrinakaif}
           />
           <Image
-            style={tw`w-[24px] h-[24px] rounded-full border-2 border-white absolute left-[32px] z-10`}
+            style={tw`w-[24px] h-[24px] rounded-full border-2 border-white absolute top-0 left-[32px] z-10`}
             source={viratKohli}
           />
-          <Text style={tw`text-[12px] absolute left-[70px]`}>
-            Liked by <span style={tw`font-bold`}>alokkumax</span> and{" "}
-            <span style={tw`font-bold`}>
+          <View style={tw`flex-row absolute left-[70px]`}>
+            <Text style={tw`text-[12px]`}>Liked by </Text>
+            <Text style={tw`text-[12px] font-bold`}>alokkumax </Text>
+            <Text style={tw`text-[12px]`}>and </Text>
+            <Text style={tw`text-[12px] font-bold`}>
               {isLiked
                 ? (Number(likesCount.replaceAll(",", "")) + 1).toLocaleString(
                     "en-IN"
                   )
                 : likesCount}{" "}
-              others
-            </span>
-          </Text>
+            </Text>
+            <Text style={tw`text-[12px]`}> others </Text>
+          </View>
         </View>
         <View style={tw``}>
-          <Text style={tw`text-[12px] mb-[5px]`}>
-            <span style={tw`font-bold mr-[4px]`}>{name}</span>
-            {caption.length >= 100 ? caption.slice(0, 100) : caption}
-            <span style={tw`text-[#6E6E6E]`}>
-              {caption.length >= 100 ? "... more" : ""}
-            </span>
-          </Text>
+          <Text style={tw`text-[12px] font-bold mb-[4px]`}>{name}{"   "}<Text style={tw`font-normal`}>{caption.length >= 100 ? caption.slice(0, 100) : caption}</Text><Text style={tw`text-[12px] text-[#6E6E6E]`}>{caption.length >= 100 ? "... more" : ""}</Text></Text>
+
           <Text style={tw`text-[12px] text-[#6E6E6E] mb-[3px]`}>
             View all {commentCount} comments
           </Text>
@@ -160,7 +156,7 @@ export default function Post({ item,islastPost }) {
             data={sampleComments}
             keyExtractor={(item) => item.id}
             renderItem={({ item, index }) => (
-              <Comment item={item} key={index}/>
+              <Comment item={item} key={index} />
             )}
           />
         </View>

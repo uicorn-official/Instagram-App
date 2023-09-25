@@ -1,7 +1,7 @@
 const posts = [
   {
     id:1,
-    dp: "dp.jpg",
+    dp: require("../images/friends/dp.jpg"),
     name: "abhilasha_4sq",
     isVerified: true,
     isStoryActive: true,
@@ -10,7 +10,7 @@ const posts = [
     tagList: [],
     isReel: false,
     reel: "",
-    post: ["post1.jpg"],
+    post : [ require('../images/friends/post1.jpg') ] ,
     caption:
       "Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
     likesCount: "12,51,785",
@@ -22,7 +22,7 @@ const posts = [
   },
   {
     id:2,
-    dp: "srk.jpg",
+    dp: require("../images/friends/srk.jpg"),
     name: "iamsrk",
     isVerified: true,
     isStoryActive: true,
@@ -31,7 +31,7 @@ const posts = [
     tagList: [],
     isReel: false,
     reel: "",
-    post: ["srk.jpg"],
+    post : [ require('../images/friends/srk.jpg') ] ,
     caption:
       "Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
     likesCount: "24,51,182",
@@ -43,7 +43,7 @@ const posts = [
   },
   {
     id:3,
-    dp: "katrina-kaif.jpg",
+    dp: require("../images/friends/katrina-kaif.jpg"),
     name: "katrinakaif",
     isVerified: true,
     isStoryActive: true,
@@ -52,7 +52,7 @@ const posts = [
     tagList: [],
     isReel: false,
     reel: "",
-    post: ["katrina-kaif.jpg"],
+    post : [ require('../images/friends/katrina-kaif.jpg') ] ,
     caption:
       "Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
     likesCount: "7,51,428",
@@ -64,7 +64,7 @@ const posts = [
   },
   {
     id:4,
-    dp: "chris-evans.jpg",
+    dp: require("../images/friends/chris-evans.jpg"),
     name: "chrisevans",
     isVerified: true,
     isStoryActive: true,
@@ -73,7 +73,7 @@ const posts = [
     tagList: [],
     isReel: false,
     reel: "",
-    post: ["chris-evans.jpg"],
+    post : [ require('../images/friends/chris-evans.jpg') ] ,
     caption:
       "Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
     likesCount: "14,51,589",
@@ -84,8 +84,8 @@ const posts = [
     ]
   },
   {
-    id:5,
-    dp: "deepika-padukone.jpg",
+    id:5 ,
+    dp: require("../images/friends/deepika-padukone.jpg"),
     name: "deepikapadukone",
     isVerified: true,
     isStoryActive: true,
@@ -94,7 +94,7 @@ const posts = [
     tagList: [],
     isReel: false,
     reel: "",
-    post: ["deepika-padukone.jpg"],
+    post : [ require('../images/friends/deepika-padukone.jpg') ] ,
     caption:
       "Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
     likesCount: "51,984",
