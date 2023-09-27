@@ -23,7 +23,8 @@ import tag from "../../icons/tag.png";
 import like from "../../icons/like.png";
 import tw from "twrnc";
 import Comment from "./Comment";
-import Span from "../global/Span";
+import { Platform } from "react-native";
+// import Video from "react-native-video";
 
 export default function Post({ item, islastPost }) {
   const {
@@ -46,7 +47,11 @@ export default function Post({ item, islastPost }) {
   const [isSaved, setsaved] = useState(false);
 
   return (
-    <View style={tw`${islastPost ? "mb-[200px]" : ""}`}>
+    <View
+      style={tw`${
+        islastPost ? (Platform.OS === "web" ? "mb-[60px]" : "mb-[250px]") : ""
+      }`}
+    >
       {/* Post Header */}
       <View
         style={tw`flex-row justify-between items-center px-[10px] py-[7px] `}
@@ -83,6 +88,10 @@ export default function Post({ item, islastPost }) {
             style={tw`w-[24px] h-[24px] rounded-full absolute bottom-[10px] left-[16px]`}
             source={tag}
           />
+          // <Video
+          //   source={{ uri: "https://www.instagram.com/reel/CtKIWmkhaFf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==" }} // Can be a URL or a local file.
+          //   style={{width:"100%",height:200}}
+          // />
         )}
       </View>
 
@@ -147,7 +156,16 @@ export default function Post({ item, islastPost }) {
           </View>
         </View>
         <View style={tw``}>
-          <Text style={tw`text-[12px] font-bold mb-[4px]`}>{name}{"   "}<Text style={tw`font-normal`}>{caption.length >= 100 ? caption.slice(0, 100) : caption}</Text><Text style={tw`text-[12px] text-[#6E6E6E]`}>{caption.length >= 100 ? "... more" : ""}</Text></Text>
+          <Text style={tw`text-[12px] font-bold mb-[4px]`}>
+            {name}
+            {"   "}
+            <Text style={tw`font-normal`}>
+              {caption.length >= 100 ? caption.slice(0, 100) : caption}
+            </Text>
+            <Text style={tw`text-[12px] text-[#6E6E6E]`}>
+              {caption.length >= 100 ? "... more" : ""}
+            </Text>
+          </Text>
 
           <Text style={tw`text-[12px] text-[#6E6E6E] mb-[3px]`}>
             View all {commentCount} comments

@@ -5,7 +5,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b8aebf01-d2c4-4027-b72f-ab213daab106"
+      }
+    }
   },
   "name": "rn-world"
 }
