@@ -1,5 +1,6 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
+import { ScrollView } from "react-native";
 import { View, Text } from "react-native";
 import IconF from "react-native-vector-icons/Feather";
 import tw from "twrnc";

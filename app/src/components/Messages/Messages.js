@@ -16,10 +16,10 @@ export default function Messages({ navigation }) {
   };
 
   return (
-    <View style={tw`w-full h-full bg-white`}>
+    <View style={tw`w-full flex-1 bg-white`}>
       <AppbarMessages navigation={navigation} />
         <MessagesHeader tab={tab} handleTabOptions={handleTabs} />
-        {tab === 1 && <AllMessages />}
+        {tab === 1 && <AllMessages navigation={navigation} />}
         {tab === 2 && <General />}
         {tab === 3 && <Request />}
     </View>

@@ -11,6 +11,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./app/src/components/Home/Home";
 import Messages from "./app/src/components/Messages/Messages";
+import DM from "./app/src/components/DMs/DM";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -23,7 +24,9 @@ export default function App() {
         <Stack.Screen name="Add" component={Stories} />
         <Stack.Screen name="Reels" component={Stories} />
         <Stack.Screen name="Profile" component={Stories} />
+
         <Stack.Screen name="Messages" component={Messages} options={{ headerShown: false }}/>
+        <Stack.Screen name="DMs" component={DM} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

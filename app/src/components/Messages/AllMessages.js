@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Text, FlatList, Image } from "react-native";
+import { View, Text, FlatList, Image,TouchableOpacity } from "react-native";
 import tw from "twrnc";
 import messages from "../../constants/messages";
 import storyring from "../../images/global/Storyring.png";
 import IconF from "react-native-vector-icons/Feather";
 import bluetick from "../../icons/bluetick.png";
 
-export default function AllMessages() {
+export default function AllMessages({navigation}) {
   return (
     <View style={tw`p-[13px] flex-1`}>
       <FlatList
@@ -14,7 +14,8 @@ export default function AllMessages() {
         keyExtractor={(item) => item.id}
         renderItem={({ item, index }) => (
           <>
-            <View style={tw`flex-row items-center justify-between mb-[20px]`}>
+            <TouchableOpacity style={tw`flex-row items-center justify-between mb-[20px]`} onPress={()=>navigation.navigate("DMs",{item:item})}>
+
               <View style={tw`flex-row items-center justify-between w-full`}>
                 <View style={tw`flex-row`}>
                   <View style={tw`mr-[15px] w-[60px] flex items-center`}>
@@ -68,7 +69,7 @@ export default function AllMessages() {
                   style={tw`${item.msgsCount?"text-black":"text-[#6E6E6E]"}`}
                 />
               </View>
-            </View>
+            </TouchableOpacity>
           </>
         )}
       />
