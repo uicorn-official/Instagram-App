@@ -14,7 +14,7 @@ export default function Stories() {
         style={tw`grow-0`}
       >
         <View
-          style={tw`flex-row h-[100px] items-center border-b-2 border-[#DDDDDD]`}
+          style={tw`flex-row h-[100px] items-center border-b-[1px] border-[#DDDDDD]`}
         >
           <MyStory style="mr-[12px]" />
           {storiesData.map((item, index) => (

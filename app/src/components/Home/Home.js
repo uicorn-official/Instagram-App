@@ -8,7 +8,7 @@ import BottomNavbar from "..//Layout/BottomNavbar";
 
 export default function Home({navigation}) {
   return (
-    <SafeAreaView style={tw`w-[100%] flex-1`}>
+    <SafeAreaView style={tw`w-[100%] flex-1 bg-white`}>
       <AppbarGlobal navigation={navigation}/>
       <Stories />
       <AllPosts />
